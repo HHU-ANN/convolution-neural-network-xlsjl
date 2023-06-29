@@ -31,7 +31,7 @@ def main():
     model = NeuralNetwork()
     current_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(current_dir)
-    model.load_state_dict(torch.load(parent_dir + '/pth/model.pth'))
+    model.load_state_dict(torch.load(parent_dir + '/pth/model.pth', map_location='cpu'))
     return model
 
 if __name__ == '__main__':
