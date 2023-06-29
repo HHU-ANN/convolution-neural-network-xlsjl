@@ -11,12 +11,21 @@ from torch.utils.data import DataLoader
 class NeuralNetwork(nn.Module):
     def __init__(self):
         super(NeuralNetwork, self).__init__()
-        # 添加你的神经网络结构
         self.conv1 = nn.Conv2d(3, 64, kernel_size=11, stride=4, padding=2)
         self.relu = nn.ReLU(inplace=True)
         self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2)
         self.global_avgpool = nn.AdaptiveAvgPool2d(1)
         self.fc = nn.Linear(64, 10)
+
+    def forward(self, x):
+        # 定义模型的前向传播
+        x = self.conv1(x)
+        x = self.relu(x)
+        x = self.maxpool(x)
+        x = self.global_avgpool(x)
+        x = torch.flatten(x, 1)
+        x = self.fc(x)
+        return x
 
 def read_data():
     # 这里可自行修改数据预处理，batch大小也可自行调整

@@ -8,7 +8,6 @@ from torch.utils.data import DataLoader
 class NeuralNetwork(nn.Module):
     def __init__(self):
         super(NeuralNetwork, self).__init__()
-        # 定义你的模型结构
         self.conv1 = nn.Conv2d(3, 64, kernel_size=11, stride=4, padding=2)
         self.relu = nn.ReLU(inplace=True)
         self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2)
