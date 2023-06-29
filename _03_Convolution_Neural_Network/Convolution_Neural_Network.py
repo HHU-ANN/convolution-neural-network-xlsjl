@@ -1,4 +1,4 @@
-# 在该文件NeuralNetwork类中定义你的模型 
+# 在该文件NeuralNetwork类中定义你的模型 1
 # 在自己电脑上训练好模型，保存参数，在这里读取模型参数（不要使用JIT读取），在main中返回读取了模型参数的模型
 
 import os

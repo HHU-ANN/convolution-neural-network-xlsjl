@@ -5,6 +5,7 @@ import torch.optim as optim
 import torchvision
 from torch.utils.data import DataLoader
 
+
 class NeuralNetwork(nn.Module):
     def __init__(self):
         super(NeuralNetwork, self).__init__()
